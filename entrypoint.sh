@@ -4,6 +4,7 @@ set -e
 INPUT_CREATE_REPO="${INPUT_CREATE_REPO:-false}"
 INPUT_SET_REPO_POLICY="${INPUT_SET_REPO_POLICY:-false}"
 INPUT_REPO_POLICY_FILE="${INPUT_REPO_POLICY_FILE:-repo-policy.json}"
+INPUT_SET_LIFECYCLE_POLICY="${INPUT_SET_LIFECYCLE_POLICY:-true}"
 INPUT_LIFECYCLE_POLICY_FILE=""${INPUT_LIFECYCLE_POLICY_FILE:-lifecycle-policy.json}"
 
 function main() {
@@ -20,7 +21,7 @@ function main() {
   login
   create_ecr_repo $INPUT_CREATE_REPO
   set_ecr_repo_policy $INPUT_SET_REPO_POLICY
-  set_ecr_lifecycle_policy $INPUT_SET_ECR_LIFECYCLE_POLICY
+  set_ecr_lifecycle_policy $INPUT_SET_LIFECYCLE_POLICY
 }
 
 function sanitize() {
