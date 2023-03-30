@@ -37,6 +37,12 @@ inputs:
   repo_policy_file:
     description: Set this to repository policy statement json file. only used if the set_repo_policy is set to true
     default: repo-policy.json
+  set_lifecycle_policy:
+    description: Set this to true to set a policy on the repository
+    default: true
+  lifecycle_policy_file:
+    description: Set this to repository policy statement json file. only used if the set_repo_policy is set to true
+    default: lifecycle-policy.json
 runs:
   using: docker
   image: Dockerfile
