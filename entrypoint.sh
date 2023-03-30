@@ -104,7 +104,7 @@ function set_ecr_lifecycle_policy() {
   if [ "${1}" = true ]; then
     echo "== START SET LIFECYCLE POLICY"
     if [ -f "${INPUT_LIFECYCLE_POLICY_FILE}" ]; then
-      aws ecr put-lifecycle-policy --repository-name $INPUT_REPO lifecycle-policy-text file://"${INPUT_LIFECYCLE_POLICY_FILE}"
+      aws ecr put-lifecycle-policy --repository-name $INPUT_REPO --lifecycle-policy-text file://"${INPUT_LIFECYCLE_POLICY_FILE}"
       echo "== FINISHED SET LIFECYCLE POLICY"
     else
       echo "== LIFECYCLE POLICY FILE (${INPUT_LIFECYCLE_POLICY_FILE}) DOESN'T EXIST. SKIPPING.."
